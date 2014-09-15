@@ -1,0 +1,7 @@
+# !/bin/bash
+TIME=60;
+while sleep $TIME;do
+DATE=$(echo `date`);
+RESULT=$(/home/y/libexec/ymon/finance/check_finance_quoteport "-S" "EURUSD=X JPYUSD=X GBPUSD=X AUDUSD=X CADUSD=X CHFUSD=X" "-sw" "-dl" "-w" "10" "-c" "10" "-m" "us_market" "-omo" "-nf -w 1460 -c 1460");
+echo $DATE $RESULT >> check_currencies_result;
+done;
