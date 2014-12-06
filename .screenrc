@@ -1,3 +1,24 @@
+# My Personal Bashrc modified from a template
+
+# Inside screen:
+# function key: `(backtick)
+# input ` : `q (line 18)
+# switch between two screen: ``
+# exit: ` then ctrl+D
+# switch to screen according to single digit number: ` then number
+# switch to screen of any number: ` then `' then input number
+# scroll up: ` then shift+] into the scroll mode. esc to exit, shift+up scrool up.
+# F1 to F9 function hotkeys. Refer to line 56 to 67.
+
+# screen command:
+# screen -S [name] Open a new screen with [name]
+# screen -ls List all the screens
+# screen -r [name] Resume a screen
+# screen -D -r [name] Detach and resume a screen. Useful when your previous session crashed unexpectly. 
+
+
+
+
 #   Screen Options   ##
 shell bash                      # Tell screen your default shell
 startup_message off             # Turn off start message
