@@ -73,3 +73,35 @@ alias cd2="cd ../.."
 alias cd3="cd ../../.."
 alias cd4="cd ../../../.."
 alias cd5="cd ../../../../.."
+
+# fawk
+# https://gist.github.com/anonymous/8cfd9652085061dbebf5
+function fawk() {
+    USAGE="\
+usage:  fawk [<awk_args>] <field_no>
+        Ex: getent passwd | grep andy | fawk -F: 5
+"
+    if [ $# -eq 0 ]; then
+        echo -e "$USAGE" >&2
+        return
+        #exit 1 # whoops! that would quit the shell!
+    fi
+ 
+    # bail if the *last* argument isn't a number (source:
+    # http://stackoverflow.com/a/808740)
+    last=${@:(-1)}
+    if ! [ $last -eq $last ] &>/dev/null; then
+        echo "FAWK! Last argument (awk field) must be numeric." >&2
+        echo -e "$USAGE" >&2;
+        return
+    fi
+ 
+    if [ $# -gt 1 ]; then
+        # Source:
+        # http://www.cyberciti.biz/faq/linux-unix-bsd-apple-osx-bash-get-last-argument/
+        rest=${@:1:$(( $# - 1 ))}
+    else
+        rest='' # just to be sure
+    fi
+    awk $rest "{ print  \$$last }"
+} # fawk
