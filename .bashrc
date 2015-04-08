@@ -109,3 +109,4 @@ usage:  fawk [<awk_args>] <field_no>
 # git
 alias gc="git commit -m"
 alias ga="git add"
+alias gs="git status"
