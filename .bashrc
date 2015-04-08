@@ -105,3 +105,7 @@ usage:  fawk [<awk_args>] <field_no>
     fi
     awk $rest "{ print  \$$last }"
 } # fawk
+
+# git
+alias gc="git commit -m"
+alias ga="git add"
