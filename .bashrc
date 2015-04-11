@@ -110,3 +110,13 @@ usage:  fawk [<awk_args>] <field_no>
 alias gc="git commit -m"
 alias ga="git add"
 alias gs="git status"
+
+# replace function name
+replaceName () {
+# TODO add sanity check
+    if [[ "$OSTYPE" == "darwin"* ]]; then
+        find . -type f -print0 | xargs -0 sed -i '' "s/"$1"/"$2"/g"
+    else
+        find . -type f -print0 | xargs -0 sed -i "s/"$1"/"$2"/g"
+    fi
+}
