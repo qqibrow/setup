@@ -76,7 +76,7 @@ alias cd5="cd ../../../../.."
 
 # fawk
 # https://gist.github.com/anonymous/8cfd9652085061dbebf5
-function fawk() {
+fawk() {
     USAGE="\
 usage:  fawk [<awk_args>] <field_no>
         Ex: getent passwd | grep andy | fawk -F: 5
@@ -115,8 +115,8 @@ alias gs="git status"
 replaceName () {
 # TODO add sanity check
     if [[ "$OSTYPE" == "darwin"* ]]; then
-        find . -type f -print0 | xargs -0 sed -i '' "s/"$1"/"$2"/g"
+        find . -type f -print0 | xargs -0 sed -i '' "s/$1/$2/g"
     else
-        find . -type f -print0 | xargs -0 sed -i "s/"$1"/"$2"/g"
+        find . -type f -print0 | xargs -0 sed -i "s/$1/$2/g"
     fi
 }
