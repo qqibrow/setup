@@ -120,3 +120,9 @@ replaceName () {
         find . -type f -print0 | xargs -0 sed -i "s/$1/$2/g"
     fi
 }
+
+# process related
+# show detail of all the match processes
+pDetailByName() {
+	ps -fp $(pgrep $1)
+}
