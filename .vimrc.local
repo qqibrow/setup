@@ -8,3 +8,7 @@ if exists('+colorcolumn')
         au BufWinEnter * let w:m2=matchadd('ErrorMsg', '\%>80v.\+', -1)
 endif
 :set makeprg=gmake\ all\/os-platforms
+
+" setup perl syntax checker
+:let g:syntastic_enable_perl_checker = 1
+:let g:syntastic_perl_checkers = ['perl', 'perlcritic']
